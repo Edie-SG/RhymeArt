@@ -474,6 +474,8 @@ main {
             .imgBox img {
                 max-width: 85%;
                 max-height: 90%;
+                width: auto;
+                height: auto;
                 box-shadow: 0px 0px 10px var(--frontColor1);
                 border-radius: 0.375rem;
                 cursor: pointer;
