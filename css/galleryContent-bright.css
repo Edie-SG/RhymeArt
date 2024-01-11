@@ -747,6 +747,7 @@ main {
 
     .offcanvasLists .delete svg {
         display: block;
+        width: 1.2rem;
         fill: var(--frontColor2);
     }
 
