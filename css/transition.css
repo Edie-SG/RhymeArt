@@ -1,0 +1,156 @@
+:root {
+    font-size: clamp(16px, 2vmax, 32px);
+    --TfrontColor: rgba(0, 0, 0, 0.7);
+    --TfrontColor2: rgba(0, 0, 0, 0.9);
+    --TfrontColor3: #808080;
+    --TbackColor: rgba(255, 255, 255, 0.8);
+    --TbackColor2: rgba(255, 255, 255, 1);
+    --opacity: 0.1;
+
+    --color-Tstop-1: #397BA3;
+    --color-Tstop-2: #EAD093;
+}
+
+.transition {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    height: 0;
+    width: 0;
+    
+    & svg {
+        position: relative;
+        width: 4rem;
+        z-index: 1;
+    }
+
+    .part1 {
+        position: fixed;
+        height: 100vh;
+        width: 50vw;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        background-color: var(--TfrontColor);
+        transition: 0.5s ease;
+
+        .inner {
+            position: absolute;
+            inset: 0;
+            background-color: var(--TfrontColor3);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        & svg {
+            left: 0.5px;
+            position: relative;
+            filter: grayscale(100%);
+            fill: url(#logoGradientPart1);
+        }
+    }
+
+    .part1::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--TfrontColor);
+        z-index: 0;
+    }
+
+    .part2 {
+        position: fixed;
+        height: 100vh;
+        width: 50vw;
+        left: 50vw;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        background-color: var(--TfrontColor);
+        transition: 0.5s ease;
+
+        .inner {
+            background-color: var(--TfrontColor3);
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        & svg {
+            filter: grayscale(100%);
+            fill: url(#logoGradientPart2);
+        }
+    }
+
+    .part2::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--TfrontColor);
+        z-index: 0;
+    }
+}
+
+.transition1 {
+    .part1 {
+        transform: translateX(-110%);
+    }
+
+    .part2 {
+        transform: translateX(110%);
+    }
+}
+
+.transition1.is-active {
+    .part1 {
+        transform: translateX(0);
+    }
+
+    .part2 {
+        transform: translateX(0);
+    }
+}
+
+.transition2 {
+    .part1 {
+        transform: translateY(-110%);
+    }
+
+    .part2 {
+        transform: translateY(110%);
+    }
+}
+
+.transition2.is-active {
+    .part1 {
+        transform: translateY(0);
+    }
+
+    .part2 {
+        transform: translateY(0);
+    }
+}
+
+.transition3 {
+    .part1 {
+        transform: translateY(110%);
+    }
+
+    .part2 {
+        transform: translateY(-110%);
+    }
+}
+
+.transition3.is-active {
+    .part1 {
+        transform: translateY(0);
+    }
+
+    .part2 {
+        transform: translateY(0);
+    }
+}

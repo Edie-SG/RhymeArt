@@ -1,0 +1,212 @@
+:root {
+    font-size: clamp(16px, 2vmax, 32px);
+    --frontColor: rgba(0, 0, 0, 0.7);
+    --frontColor2: rgba(0, 0, 0, 0.9);
+    --frontColor3: rgba(0, 0, 0, 0.1);
+    --backColor: rgba(255, 255, 255, 0.8);
+    --backColor2: rgba(255, 255, 255, 1);
+    --opacity: 0.1;
+}
+
+body {
+    filter: grayscale(100%);
+    color: var(--frontColor);
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--backColor) center/cover no-repeat;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--backColor);
+    z-index: -3;
+}
+
+header {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @media (aspect-ratio > 1.4) {
+        width: 40rem;
+        margin-bottom: 0;
+        margin-right: 5rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+        "brand ."
+        "brand logo"
+        "h1 logo"
+        ". btn";
+        justify-items: center;
+    }
+
+    @media (min-width: 1920px) {
+        width: 45rem;
+    }
+
+    #logo {
+        fill: var(--frontColor);
+        width: 5rem;
+        margin-bottom: 2rem;
+        @media (aspect-ratio > 1.4) {
+            grid-area: logo;
+            align-self: end;
+            margin-bottom: 1rem;
+        }
+    }
+    
+    #brand {
+        fill: var(--frontColor);
+        width: 18rem;
+        margin-bottom: 2rem;
+        @media (aspect-ratio > 1.4) {
+            grid-area: brand;
+            align-self: end;
+        }
+    }
+    
+    & h1 {
+        font-family: 'Fleur De Leah', cursive;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        @media (aspect-ratio > 1.4) {
+            grid-area: h1;
+            margin-bottom: 0;
+            align-self: start;
+        }
+    }
+    
+    .btn {
+        border: none;
+        font-family: 'Jost', sans-serif;
+        font-weight: 400;
+        font-size: 1.3rem;
+        position: relative;
+        width: 10rem;
+        color: var(--frontColor);
+        
+        @media (aspect-ratio > 1.4) {
+            grid-area: btn;
+            margin-top: 0.5rem;
+        }
+    }
+    
+    .btn:is(:hover, :focus, :active) {
+        border: none;
+        color: var(--backColor2)!important;
+    }
+
+    .btn:is(:hover, :focus, :active) svg {
+        opacity: 1;
+    }
+
+    .btn svg {
+        fill: var(--frontColor2);
+        opacity: 0.4;
+        width: 10rem;
+        position: absolute;
+        left: 1rem;
+        z-index: -2;
+        transition: 0.5s;
+    
+        .cls-1 {
+            opacity: 1;
+        }
+        
+        .cls-2 {
+            opacity: 0.3;
+        }
+        
+        .cls-3 {
+            opacity: 0.2;
+        }
+        
+        .cls-4 {
+            opacity: 0.7;
+        }
+        
+        .cls-5 {
+            opacity: 0.8;
+        }
+        
+        .cls-6 {
+            opacity: 0.5;
+        }
+        
+        .cls-7 {
+            opacity: 0.5;
+        }
+        
+        .cls-8 {
+            opacity: 0.8;
+        }
+    }
+}
+
+header::after {
+    content: "";
+    display: none;
+    background-color: var(--frontColor);
+    block-size: 100%;
+    inline-size: 0.05rem;
+    position: absolute;
+    inset-inline-start: 66%;
+}
+
+@media (aspect-ratio > 1.4) {
+    header::after {
+        display: block;
+    }
+}
+
+
+
+footer {
+    position:fixed;
+    bottom: 0.5rem;
+
+    @media (aspect-ratio > 1.4) {
+        right: 0.5rem;
+        bottom: auto;
+    }
+
+    & ul {
+        padding: 0;
+        margin: 0;
+
+        @media (aspect-ratio >1.4) {
+            flex-direction: column;
+        }
+    }
+    
+    .btn {
+        width: 2rem;
+        height: 2rem;
+        padding: 0.5rem;
+        display: flex;
+
+        @media (min-width: 992px) {
+            scale: 0.8;
+        }
+    }
+
+    .btn:is(:hover, :focus), .btn.is-active {
+        border-color: transparent;
+        background-color: var(--frontColor3);
+    }
+    
+    & svg {
+        fill: var(--frontColor2);
+        width: 1rem;
+    }
+}
