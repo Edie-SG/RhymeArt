@@ -18,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     background: var(--backColor) center/cover no-repeat;
 }
@@ -83,7 +83,7 @@ main {
     inset: 0;
     margin: 20vh 0;
     overflow: scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scrollbar-width: none;
     box-shadow: 0px 0px 10px 2px var(--frontColor3);
     background-color: var(--backColor3);

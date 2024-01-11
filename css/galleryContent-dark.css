@@ -736,10 +736,10 @@ main {
         border-radius: 0.2rem;
         background-color: transparent;
         box-shadow: 0px 0px 2px var(--backColor2);
+    }
 
-        & svg {
-            fill: var(--frontColor3);
-        }
+    .offcanvasLists .delete svg {
+        fill: var(--frontColor3);
     }
 
     .offcanvasLists button.delete:is(:hover, :focus) {
