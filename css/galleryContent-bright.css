@@ -526,6 +526,7 @@ main {
                 max-height: 90%;
                 width: auto;
                 height: auto;
+                object-fit: contain;
                 box-shadow: 0px 0px 5px var(--frontColor1);
                 border-radius: 0.375rem;
                 cursor: pointer;
