@@ -727,36 +727,35 @@ main {
                 display: none;
             }
         }
+    }
 
-        & button.delete {
-            position: absolute;
-            right: 0.5rem;
-            bottom: -0.5rem;
-            width: 1.5rem;
-            height: 1.5rem;
-            padding: 0.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid transparent;
-            border-radius: 0.2rem;
-            background-color: transparent;
-            box-shadow: 0px 0px 2px var(--backColor2);
+    .offcanvasLists button.delete {
+        position: absolute;
+        right: 0.5rem;
+        bottom: -0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: 0.2rem;
+        background-color: transparent;
+        box-shadow: 0px 0px 2px var(--backColor2);
 
-            & svg {
-                fill: var(--frontColor2);
-            }
+        & svg {
+            fill: var(--frontColor2);
         }
+    }
 
-        & button.delete:is(:hover, :focus) {
-            border: 1px solid var(--frontColor1);
-            box-shadow: 0px 0px 2px var(--frontColor2);
-        }
+    .offcanvasLists button.delete:is(:hover, :focus) {
+        border: 1px solid var(--frontColor1);
+        box-shadow: 0px 0px 2px var(--frontColor2);
+    }
 
-        & button.delete:is(:hover, :focus) svg {
-            fill: var(--frontColor1);
-        }
-
+    .offcanvasLists button.delete:is(:hover, :focus) svg {
+        fill: var(--frontColor1);
     }
 
     .listsBack {
