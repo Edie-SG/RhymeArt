@@ -472,8 +472,8 @@ main {
             }
 
             .imgBox img {
-                max-width: 85%;
                 max-height: 90%;
+                max-width: 85%;
                 width: auto;
                 height: auto;
                 object-fit: contain;
