@@ -623,7 +623,8 @@ main {
             border-radius: 0.3rem;
 
             & img {
-                width: 100%;
+                width: 100%!important;
+                height: auto!important;
             }
 
             .fullView {
