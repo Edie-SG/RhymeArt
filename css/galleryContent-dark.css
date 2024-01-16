@@ -666,8 +666,8 @@ main {
 
         .imgBox {
             position: relative;
-            width: 40%;
-            height: 6rem;
+            width: 40%!important;
+            height: 6rem!important;
             overflow: hidden;
             border-radius: 0.3rem;
 
