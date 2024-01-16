@@ -421,6 +421,8 @@ function toggleCardCarousel() {
         imgBoxes.forEach(function(node) {
             node.classList.add("card-img-top");
             node.style.setProperty("background-image", "");
+            node.querySelector("img").style.setProperty("height", "auto");
+            node.querySelector("img").style.setProperty("width", "100%")
         });
 
         bodies.forEach(function(node) {
@@ -780,10 +782,12 @@ function controlImgSize() {
 
         if (aspectR > 1.4) {
             paintingImg.style.setProperty("height", "90%");
+            paintingImg.style.setProperty("width", "auto");
         }
 
         else {
             paintingImg.style.setProperty("width", "85%");
+            paintingImg.style.setProperty("height", "auto");
         }
     });
 }

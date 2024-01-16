@@ -524,6 +524,8 @@ main {
             .imgBox img {
                 /* max-height: 90%;
                 max-width: 85%; */
+                width: auto;
+                height: auto;
                 object-fit: contain;
                 box-shadow: 0px 0px 5px var(--frontColor1);
                 border-radius: 0.375rem;
