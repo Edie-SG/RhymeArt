@@ -779,11 +779,11 @@ function controlImgSize() {
         let aspectR = h / w;
 
         if (aspectR > 1.4) {
-            paintingImg.style.setProperty("max-height", "90%");
+            paintingImg.style.setProperty("height", "90%");
         }
 
         else {
-            paintingImg.style.setProperty("max-width", "85%");
+            paintingImg.style.setProperty("width", "85%");
         }
     });
 }
