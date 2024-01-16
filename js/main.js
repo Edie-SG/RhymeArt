@@ -389,6 +389,8 @@ function toggleCardCarousel() {
         preNextButton.forEach(function(node) {
             node.style.setProperty("display", "block");
         });
+
+        controlImgSize();
     });
 
     carouselButton.addEventListener("keypress", function(event) {
@@ -767,4 +769,21 @@ function switchTab() {
 			switchContentPage(page_id);
 		});
 	}
+}
+
+function controlImgSize() {
+    const paintingImgs = document.querySelectorAll(".carousel-item .imgBox img");
+    paintingImgs.forEach(function (paintingImg) {
+        let h = paintingImg.naturalHeight;
+        let w = paintingImg.naturalWidth;
+        let aspectR = h / w;
+
+        if (aspectR > 1.4) {
+            paintingImg.style.setProperty("max-height", "90%");
+        }
+
+        else {
+            paintingImg.style.setProperty("max-width", "85%");
+        }
+    });
 }
