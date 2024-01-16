@@ -18,6 +18,10 @@ window.onload = () => {
         offcanvasListsToggle();
         wishAndShopping();
         switchTab();
+
+        window.addEventListener("resize", () => {
+            controlImgBoxSize();
+        });
 	}
 }
 
@@ -774,6 +778,8 @@ function switchTab() {
 }
 
 function controlImgSize() {
+    controlImgBoxSize();
+
     const paintingImgs = document.querySelectorAll(".carousel-item .imgBox img");
     paintingImgs.forEach(function (paintingImg) {
         let h = paintingImg.naturalHeight;
@@ -788,6 +794,27 @@ function controlImgSize() {
         else {
             paintingImg.style.setProperty("width", "85%");
             paintingImg.style.setProperty("height", "auto");
+        }
+    });
+}
+
+function controlImgBoxSize() {
+    const paintingBoxes = document.querySelectorAll(".carousel-item .imgBox");
+    paintingBoxes.forEach(function (box) {
+        let hb = box.clientHeight;
+        let hbp = box.parentElement.clientHeight;
+        let w = 0.8 * hbp;
+        let wbp = box.parentElement.clientWidth;
+        console.log(hb, hbp);
+        if (wbp / hbp > 0.8) {
+            box.style.height = "100%";
+            box.style.width = w + "px";
+        }
+
+        else {
+            box.style.width = "100%";
+            let h = wbp / 0.8;
+            box.style.height = h + "px"; 
         }
     });
 }

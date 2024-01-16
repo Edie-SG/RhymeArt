@@ -317,24 +317,29 @@ main {
         }
         
         .card {
-            height: 20rem;
+            height: 18rem;
             align-items: center;
             overflow: hidden;
             box-shadow: 0px 0px 5px var(--backColor4);
             border: none;
             @media (min-width: 768px){
-                height: 22rem;
+                height: 20rem;
             }
             @media (min-width: 1400px) {
-                height: 28rem;
+                height: 22rem;
             }
         }
-        
+
+        .card-img-top {
+            width: 100%!important;
+            height: auto!important;
+        }
+
         .card-img-top img {
             object-fit: cover;
             position: absolute;
             object-position: 50% 0%;
-            width: 100%;
+            width: 100%!important;
         }
         
         .card-body {
@@ -448,6 +453,11 @@ main {
             display: none;
             top: 10%;
             bottom: 10%;
+
+            @media (aspect-ratio > 1.4) {
+                top: 0;
+                bottom: 0;
+            }
         }
 
         #carouselOn .carousel-control-next:is(:hover, :focus) {
@@ -479,9 +489,6 @@ main {
 
             .imgBox {
                 position: relative;
-                max-height: 100%;
-                max-width: 100%;
-                aspect-ratio: 0.8;
                 margin: auto auto;
                 background-image: url();
                 background-size: cover;
