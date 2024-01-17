@@ -801,10 +801,11 @@ function controlImgSize() {
 function controlImgBoxSize() {
     const paintingBoxes = document.querySelectorAll(".carousel-item .imgBox");
     paintingBoxes.forEach(function (box) {
-        let hb = box.clientHeight;
-        let hbp = box.parentElement.clientHeight;
+        box.parentElement.parentElement.style.display = "block";
+        let hb = box.offsetHeight;
+        let hbp = box.parentElement.offsetHeight;
         let w = 0.8 * hbp;
-        let wbp = box.parentElement.clientWidth;
+        let wbp = box.parentElement.offsetWidth;
         console.log(hb, hbp);
         if (wbp / hbp > 0.8) {
             box.style.height = "100%";
@@ -816,5 +817,6 @@ function controlImgBoxSize() {
             let h = wbp / 0.8;
             box.style.height = h + "px"; 
         }
+        box.parentElement.parentElement.style.display = "";
     });
 }
